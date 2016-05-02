@@ -16,6 +16,6 @@
   },
   "permissions": [
     "storage",
-    "http://localhost:8080/"
+    "http://chests.eu-west-1.elasticbeanstalk.com/"
   ]
 }

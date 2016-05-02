@@ -16,6 +16,10 @@ If you are running the Master Server yourself, you will first need to navigate t
 
 Change the variable named "masteryServerHost" to the domain you are running the server (typically this will be localhost:8080) in both files.
 
+Additionally, you will need to change the "permissions" section of the manifest.json file to the domain you are running the server, located here:
+
+{project.directory}\chests-plus-chrome-extension\src\manifest.json
+
 Using Google Chrome navigate to chrome://extensions and make sure "Developer mode" is checked in the top right of the page.
 
 Click the "Load unpacked extension..." button in the top left of the page and select the following folder:
@@ -66,6 +70,7 @@ http://chests.eu-west-1.elasticbeanstalk.com/
 
 ### Manual Deployment ###
 The server is built using Maven. To build the server, navigate to the root of the server module {project.directory}/league-mastery-server and execute:
+
 mvn clean package
 
 To run the server, locate the built .jar inside {project.directory}/league-mastery-server/target and run from the command line like so, replacing values surrounded by {}:
