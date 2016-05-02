@@ -10,21 +10,20 @@ Visit [the chrome webstore](https://chrome.google.com/webstore/detail/chests%20/
 ### Manual Installation ###
 If you are running the Master Server yourself, you will first need to navigate to the files:
 
-{project.directory}\chests-plus-chrome-extension\src\main.js
-
-{project.directory}\chests-plus-chrome-extension\src\settings.js
+	{project.directory}\chests-plus-chrome-extension\src\main.js
+	{project.directory}\chests-plus-chrome-extension\src\settings.js
 
 Change the variable named "masteryServerHost" to the domain you are running the server (typically this will be localhost:8080) in both files.
 
 Additionally, you will need to change the "permissions" section of the manifest.json file to the domain you are running the server, located here:
 
-{project.directory}\chests-plus-chrome-extension\src\manifest.json
+	{project.directory}\chests-plus-chrome-extension\src\manifest.json
 
 Using Google Chrome navigate to chrome://extensions and make sure "Developer mode" is checked in the top right of the page.
 
 Click the "Load unpacked extension..." button in the top left of the page and select the following folder:
 
-{project.directory}/chests-plus-chrome-extension/src
+	{project.directory}/chests-plus-chrome-extension/src
 
 ### Usage ####
 Whilst in Google Chrome and having installed the extension, click the chest icon in the top right of your window (if it isn't there, find it in the options menu).
@@ -55,27 +54,27 @@ Example:
 	
 	Returns
 	
-	```
+```
 	{
 		"name": "Blitzcrank",
 		"imageUrl": "https://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/Blitzcrank.png",
 		"highestGrade": "A+"
 	}
-	```
+```
 
 ### Hosted Solution ###
 The server is deployed and hosted on Amazon webservices at the following domain:
 
-http://chests.eu-west-1.elasticbeanstalk.com/
+	http://chests.eu-west-1.elasticbeanstalk.com/
 
 ### Manual Deployment ###
 The server is built using Maven. To build the server, navigate to the root of the server module {project.directory}/league-mastery-server and execute:
 
-mvn clean package
+	mvn clean package
 
 To run the server, locate the built .jar inside {project.directory}/league-mastery-server/target and run from the command line like so, replacing values surrounded by {}:
 
-java -jar -Driot.api-key={your-riot-api-key} league-mastery-server-{artifact-version}.jar
+	java -jar -Driot.api-key={your-riot-api-key} league-mastery-server-{artifact-version}.jar
 
 Note that the server will not function correctly if you do not provide a legitimate, working Riot API key
 
