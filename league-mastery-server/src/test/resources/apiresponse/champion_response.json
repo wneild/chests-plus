@@ -1,0 +1,64 @@
+{
+  "data": {
+    "Aatrox": {
+      "id": 266,
+      "title": "the Darkin Blade",
+      "name": "Aatrox",
+      "image": {
+        "w": 48,
+        "full": "Aatrox.png",
+        "sprite": "champion0.png",
+        "group": "champion",
+        "h": 48,
+        "y": 0,
+        "x": 0
+      },
+      "key": "Aatrox"
+    },
+    "Thresh": {
+      "id": 412,
+      "title": "the Chain Warden",
+      "name": "Thresh",
+      "image": {
+        "w": 48,
+        "full": "Thresh.png",
+        "sprite": "champion3.png",
+        "group": "champion",
+        "h": 48,
+        "y": 0,
+        "x": 336
+      },
+      "key": "Thresh"
+    },
+    "Urf": {
+      "id": 9001,
+      "title": "the Manatee",
+      "name": "Urf",
+      "image": {
+        "w": 48,
+        "full": "urf_has_been_withdrawn.png",
+        "sprite": "champion3.png",
+        "group": "champion",
+        "h": 48,
+        "y": 48,
+        "x": 0
+      },
+      "key": "Urf"
+    },
+    "Gragas": {
+      "id": 79,
+      "title": "the Rabble Rouser",
+      "name": "Gragas",
+      "image": {
+        "w": 48,
+        "full": "Gragas.png",
+        "sprite": "champion1.png",
+        "group": "champion",
+        "h": 48,
+        "y": 0,
+        "x": 0
+      },
+      "key": "Gragas"
+    }
+  }
+}

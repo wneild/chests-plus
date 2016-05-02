@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <title>Summoner Settings</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
+            background-color: #1F394B;
+            background: linear-gradient(#1F394B, #0D1417);
+            padding: 10px;
+            margin-bottom: 20px;
+            color: #93A3AA;
+            width: 240px;
+        }
+
+        .btn {
+            background-color: rgba(0, 0, 0, 0.65);
+            border: 1px solid #31302B;
+            width: 170px;
+            float: left;
+            margin-top: 7px;
+            margin-left: 30px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 1px;
+        }
+
+        .settingsBtn {
+            .btn;
+            margin-bottom: 15px;
+        }
+
+        .btn:hover {
+            border: 1px solid #93A3AA;
+        }
+
+        .btn:active {
+            border: 1px solid #94724D;
+        }
+
+        select {
+            background-color: #2D4F69;
+            background: linear-gradient(#2D4F69, #17252A);
+            border: 1px solid #2D4F69;
+            border-radius: 4px;
+            padding: .25em .5em;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            color: #FFF;
+            margin-bottom: 10px;
+        }
+
+        option {
+            background-color: #2D4F69;
+            border: 1px solid #2D4F69;
+            padding: .15em .5em;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #championInfo {
+            color: #e9d6b8;
+            background: -webkit-linear-gradient(#e9d6b8 20%, #bba460 70%, #7f6c36 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            float: right;
+        }
+
+        #championGrade {
+            text-transform: uppercase;
+            font-size: 2.5em;
+            font-family: 'Beaufort for LOL Regular', serif;
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        #chestImg {
+            padding-left: 26px;
+        }
+
+        #champion {
+            display: none;
+        }
+        
+        #errorMsg {
+            display: none;
+        }
+
+        #spinner {
+            display: block;
+            padding-left: 100px;
+        }
+        .infoDesc {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <script src="main.js"></script>
+</head>
+<body>
+
+<div id="champion">
+    <img id="championImg" src=""/>
+    <div id="championInfo">
+        <div id="championGrade"></div>
+        <span class="infoDesc">Highest Grade</span>
+        <img id="chestImg" src="icon48.png"/>
+        <span class="infoDesc">Chest Available</span>
+    </div>
+    <div id="championName"></div>
+</div>
+<span id="errorMsg"></span>
+<img id="spinner" src="spinner.gif"/>
+<div class="btn settingsBtn" id="goback" name="goback">Settings</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+[
+  {
+    "playerId": 19596625,
+    "championId": 9001,
+    "championLevel": 5,
+    "championPoints": 30130,
+    "lastPlayTime": 1461521452000,
+    "championPointsSinceLastLevel": 8530,
+    "championPointsUntilNextLevel": 0,
+    "chestGranted": false,
+    "highestGrade": "A+"
+  },
+  {
+    "playerId": 19596625,
+    "championId": 103,
+    "championLevel": 5,
+    "championPoints": 29450,
+    "lastPlayTime": 1462142088000,
+    "championPointsSinceLastLevel": 7850,
+    "championPointsUntilNextLevel": 0,
+    "chestGranted": false,
+    "highestGrade": "S+"
+  },
+  {
+    "playerId": 19596625,
+    "championId": 432,
+    "championLevel": 5,
+    "championPoints": 25718,
+    "lastPlayTime": 1462189157000,
+    "championPointsSinceLastLevel": 4118,
+    "championPointsUntilNextLevel": 0,
+    "chestGranted": true,
+    "highestGrade": "S"
+  },
+  {
+    "playerId": 19596625,
+    "championId": 21,
+    "championLevel": 5,
+    "championPoints": 22826,
+    "lastPlayTime": 1460199102000,
+    "championPointsSinceLastLevel": 1226,
+    "championPointsUntilNextLevel": 0,
+    "chestGranted": true,
+    "highestGrade": "S+"
+  }
+]

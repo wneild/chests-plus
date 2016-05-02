@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="ehcache.xsd"
+        updateCheck="true"
+        monitoring="autodetect"
+        dynamicConfig="true"
+        maxBytesLocalHeap="200M">
+
+    <cache name="nextChampionForSummoner"
+       timeToLiveSeconds="300"
+    />
+
+    <cache name="summonerId"
+       timeToLiveSeconds="0"
+    />
+
+    <cache name="champions"
+       timeToLiveSeconds="0"
+    />
+
+    <cache name="clientVersion"
+       timeToLiveSeconds="0"
+    />
+
+</ehcache>
