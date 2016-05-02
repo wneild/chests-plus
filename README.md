@@ -11,6 +11,7 @@ Visit [the chrome webstore](https://chrome.google.com/webstore/detail/chests%20/
 If you are running the Master Server yourself, you will first need to navigate to the files:
 
 {project.directory}\chests-plus-chrome-extension\src\main.js
+
 {project.directory}\chests-plus-chrome-extension\src\settings.js
 
 Change the variable named "masteryServerHost" to the domain you are running the server (typically this will be localhost:8080) in both files.
@@ -18,6 +19,7 @@ Change the variable named "masteryServerHost" to the domain you are running the 
 Using Google Chrome navigate to chrome://extensions and make sure "Developer mode" is checked in the top right of the page.
 
 Click the "Load unpacked extension..." button in the top left of the page and select the following folder:
+
 {project.directory}/chests-plus-chrome-extension/src
 
 ### Usage ####
@@ -36,14 +38,19 @@ Below are the endpoints available to call through the server:
 #### /getSummonerId/region/{region}/summonerName/{summonerName} ####
 This will return the summoner id for the summoner name in the provided region in plain text
 Example: 
+
 	Calling /getSummonerId/region/euw/summonerName/Minion
+	
 	Returns 19596625
 	
 #### /getNextChampionChest/region/{region}/summonerName/{summonerName} ####
 This will return a recommended champion specific to the summoner provided and based on their highest mastery points and chest availability
 Example:
+
 	Calling /getNextChampionChest/region/euw/summonerName/minion
+	
 	Returns
+	
 	```
 	{
 		"name": "Blitzcrank",
@@ -53,14 +60,17 @@ Example:
 	```
 
 ### Hosted Solution ###
-The server is deployed and hosted on Amazon webservices at the following domain: http://chests.eu-west-1.elasticbeanstalk.com/
+The server is deployed and hosted on Amazon webservices at the following domain:
+
+http://chests.eu-west-1.elasticbeanstalk.com/
 
 ### Manual Deployment ###
 The server is built using Maven. To build the server, navigate to the root of the server module {project.directory}/league-mastery-server and execute:
 mvn clean package
 
-To run the server, locate the built .jar inside {project.directory}/league-mastery-server/target and run from the command line like so, replacing values surround by <>:
-java -jar -Driot.api-key=<your-riot-api-key> league-mastery-server-<artifact-version>.jar
+To run the server, locate the built .jar inside {project.directory}/league-mastery-server/target and run from the command line like so, replacing values surrounded by {}:
+
+java -jar -Driot.api-key={your-riot-api-key} league-mastery-server-{artifact-version}.jar
 
 Note that the server will not function correctly if you do not provide a legitimate, working Riot API key
 
