@@ -74,7 +74,7 @@ The server is built using Maven. To build the server, navigate to the root of th
 
 To run the server, locate the built .jar inside {project.directory}/league-mastery-server/target and run from the command line like so, replacing values surrounded by {}:
 
-	java -jar -Driot.api-key={your-riot-api-key} league-mastery-server-{artifact-version}.jar
+	java -jar -Driot.api.key={your-riot-api-key} league-mastery-server-{artifact-version}.jar
 
 Note that the server will not function correctly if you do not provide a legitimate, working Riot API key
 
