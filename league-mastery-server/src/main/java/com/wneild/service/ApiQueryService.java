@@ -1,7 +1,6 @@
 package com.wneild.service;
 
 import com.wneild.domain.Champion;
-import com.wneild.domain.ChampionWithMastery;
 import com.wneild.dto.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +44,7 @@ public class ApiQueryService {
      * @return an Optional with a present champion if api requests were successful otherwise an empty Optional
      */
     @Cacheable("nextChampionForSummoner")
-    public Optional<ChampionWithMastery> getNextBestChampionForChest(Region region, String summonerName) {
+    public Optional<Champion> getNextBestChampionForChest(Region region, String summonerName) {
         Optional<Integer> summonerId = getSummonerId(region, summonerName);
 
         if(!summonerId.isPresent()) {
@@ -58,9 +57,7 @@ public class ApiQueryService {
         });
         Optional<ChampionMasteryDto> oChampionMasteryDto = responseEntity.stream().filter(o -> !o.isChestGranted()).findFirst();
 
-        return oChampionMasteryDto.flatMap(championMasteryDto ->
-                getChampion(region, championMasteryDto.getChampionId())
-                        .map(champion -> new ChampionWithMastery(champion, championMasteryDto.getHighestGrade())));
+        return oChampionMasteryDto.flatMap(championMasteryDto -> getChampion(region, championMasteryDto.getChampionId()));
     }
 
     /**

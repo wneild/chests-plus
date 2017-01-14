@@ -29,7 +29,6 @@
         }
 
         .settingsBtn {
-            .btn;
             margin-bottom: 15px;
         }
 
@@ -72,14 +71,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             float: right;
-        }
-
-        #championGrade {
-            text-transform: uppercase;
-            font-size: 2.5em;
-            font-family: 'Beaufort for LOL Regular', serif;
-            font-weight: bolder;
-            text-align: center;
+            margin-top: 25px;
         }
 
         #chestImg {
@@ -89,7 +81,11 @@
         #champion {
             display: none;
         }
-        
+
+        #championName {
+            text-align: center;
+        }
+
         #errorMsg {
             display: none;
         }
@@ -98,9 +94,15 @@
             display: block;
             padding-left: 100px;
         }
+
         .infoDesc {
             display: block;
             margin-bottom: 5px;
+        }
+
+        #leftcol {
+            width: 120px;
+            float: left;
         }
     </style>
 
@@ -109,14 +111,15 @@
 <body>
 
 <div id="champion">
-    <img id="championImg" src=""/>
+    <div id="leftcol">
+        <img id="championImg" src=""/>
+        <div id="championName"></div>
+    </div>
     <div id="championInfo">
-        <div id="championGrade"></div>
-        <span class="infoDesc">Highest Grade</span>
         <img id="chestImg" src="icon48.png"/>
         <span class="infoDesc">Chest Available</span>
     </div>
-    <div id="championName"></div>
+
 </div>
 <span id="errorMsg"></span>
 <img id="spinner" src="spinner.gif"/>

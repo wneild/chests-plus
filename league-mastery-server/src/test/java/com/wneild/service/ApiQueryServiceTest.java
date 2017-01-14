@@ -1,7 +1,6 @@
 package com.wneild.service;
 
 import com.wneild.domain.Champion;
-import com.wneild.domain.ChampionWithMastery;
 import com.wneild.dto.Region;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,7 +32,6 @@ public class ApiQueryServiceTest {
     private static final String SUMMONER_NAME = "Johnny";
     private static final Integer CHAMPION_ID = 9001;
     private static final Integer SUMMONER_ID = 19596625;
-    private static final String HIGHEST_GRADE = "A+";
     private static final String EXPECTED_SUMMONER_API_CALL = String.format("https://%s.api.pvp.net/api/lol/%s/v1.4/summoner/by-name/%s?%s=%s", REGION.apiValue,
             REGION.apiValue, SUMMONER_NAME, API_KEY_PARAM_NAME, API_KEY);
     private static final String EXPECTED_CHAMPION_API_CALL = String.format("https://global.api.pvp.net/api/lol/static-data/%s/v1.2/champion?champData=image&%s=%s", REGION.apiValue, API_KEY_PARAM_NAME, API_KEY);
@@ -64,9 +62,9 @@ public class ApiQueryServiceTest {
         mockChampionApiRequest(true);
         mockVersionApiRequest(true);
 
-        Optional<ChampionWithMastery> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
+        Optional<Champion> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
 
-        ChampionWithMastery expectedChampion = new ChampionWithMastery(CHAMPION_NAME, EXPECTED_CHAMPION_IMAGE_API_CALL, HIGHEST_GRADE);
+        Champion expectedChampion = new Champion(CHAMPION_NAME, EXPECTED_CHAMPION_IMAGE_API_CALL);
         assertEquals(expectedChampion, nextBestChampionForChest.get());
     }
 
@@ -77,7 +75,7 @@ public class ApiQueryServiceTest {
         mockChampionApiRequest(true);
         mockVersionApiRequest(true);
 
-        Optional<ChampionWithMastery> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
+        Optional<Champion> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
 
         assertEquals(Optional.empty(), nextBestChampionForChest);
     }
@@ -89,7 +87,7 @@ public class ApiQueryServiceTest {
         mockChampionApiRequest(true);
         mockVersionApiRequest(true);
 
-        Optional<ChampionWithMastery> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
+        Optional<Champion> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
 
         assertEquals(Optional.empty(), nextBestChampionForChest);
     }
@@ -101,7 +99,7 @@ public class ApiQueryServiceTest {
         mockChampionApiRequest(false);
         mockVersionApiRequest(true);
 
-        Optional<ChampionWithMastery> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
+        Optional<Champion> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
 
         assertEquals(Optional.empty(), nextBestChampionForChest);
     }
@@ -114,9 +112,9 @@ public class ApiQueryServiceTest {
         mockChampionApiRequest(true);
         mockVersionApiRequest(false);
 
-        Optional<ChampionWithMastery> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
+        Optional<Champion> nextBestChampionForChest = apiQueryService.getNextBestChampionForChest(REGION, SUMMONER_NAME);
 
-        ChampionWithMastery expectedChampion = new ChampionWithMastery(CHAMPION_NAME, null, HIGHEST_GRADE);
+        Champion expectedChampion = new Champion(CHAMPION_NAME, null);
         assertEquals(expectedChampion, nextBestChampionForChest.get());
     }
 

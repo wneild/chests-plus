@@ -1,7 +1,6 @@
 package com.wneild.dto;
 
 public class ChampionMasteryDto {
-    private String highestGrade;
     private int championPoints;
     private int playerId;
     private int championPointsUntilNextLevel;
@@ -10,14 +9,6 @@ public class ChampionMasteryDto {
     private int championId;
     private int championPointsSinceLastLevel;
     private long lastPlayTime;
-
-    public String getHighestGrade() {
-        return highestGrade;
-    }
-
-    public void setHighestGrade(String highestGrade) {
-        this.highestGrade = highestGrade;
-    }
 
     public int getChampionPoints() {
         return championPoints;
@@ -97,15 +88,12 @@ public class ChampionMasteryDto {
         if (championLevel != that.championLevel) return false;
         if (championId != that.championId) return false;
         if (championPointsSinceLastLevel != that.championPointsSinceLastLevel) return false;
-        if (lastPlayTime != that.lastPlayTime) return false;
-        return highestGrade != null ? highestGrade.equals(that.highestGrade) : that.highestGrade == null;
-
+        return lastPlayTime == that.lastPlayTime;
     }
 
     @Override
     public int hashCode() {
-        int result = highestGrade != null ? highestGrade.hashCode() : 0;
-        result = 31 * result + championPoints;
+        int result = championPoints;
         result = 31 * result + playerId;
         result = 31 * result + championPointsUntilNextLevel;
         result = 31 * result + (chestGranted ? 1 : 0);
@@ -119,7 +107,6 @@ public class ChampionMasteryDto {
     @Override
     public String toString() {
         return "ChampionMasteryDto{" +
-                "highestGrade='" + highestGrade + '\'' +
                 ", championPoints=" + championPoints +
                 ", playerId=" + playerId +
                 ", championPointsUntilNextLevel=" + championPointsUntilNextLevel +

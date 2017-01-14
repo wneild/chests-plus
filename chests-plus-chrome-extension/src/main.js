@@ -15,8 +15,8 @@ function renderNextChampion() {
             goToSettings();
             return;
         }
-        getNextChampion(region, summoner, function(championName, championImageUrl, championHighestGrade) {
-            setChampion(championName, championImageUrl, championHighestGrade);
+        getNextChampion(region, summoner, function(championName, championImageUrl) {
+            setChampion(championName, championImageUrl);
         }, function(msg) {
             showError(msg);
         });
@@ -42,11 +42,10 @@ function getNextChampion(region, summonerName, callback, errorCallback) {
         }
         var championName = response.name;
         var championImageUrl = response.imageUrl;
-        var championHighestGrade = response.highestGrade;
         console.assert(
-            typeof championName == 'string' && typeof championImageUrl == 'string' && typeof championHighestGrade == 'string',
+            typeof championName == 'string' && typeof championImageUrl == 'string',
             'Unexpected response from the League Mastery Server!');
-        callback(championName, championImageUrl, championHighestGrade);
+        callback(championName, championImageUrl);
     };
     x.onerror = function() {
         errorCallback('Network error.');
@@ -71,10 +70,8 @@ function goToSettings() {
 function setChampion(championName, imageUrl, championHighestGrade) {
     var championImageElement = document.getElementById('championImg');
     var championNameElement = document.getElementById('championName');
-    var championGradeElement = document.getElementById('championGrade');
     championImageElement.src = imageUrl;
     championNameElement.textContent = championName;
-    championGradeElement.textContent = championHighestGrade;
     showChampionInfo();
 }
 

@@ -1,6 +1,6 @@
 package com.wneild.controller;
 
-import com.wneild.domain.ChampionWithMastery;
+import com.wneild.domain.Champion;
 import com.wneild.dto.Region;
 import com.wneild.service.ApiQueryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class SummonerInformationController {
         Optional<Region> parsedRegion = parseRegion(region);
         return apiQueryService.getNextBestChampionForChest(parsedRegion.get(), summonerName).map(championName ->
                      new ResponseEntity<>(championName, HttpStatus.OK)).orElseGet(
-                () -> new ResponseEntity<>(new ChampionWithMastery(null, null, null), HttpStatus.NOT_FOUND));
+                () -> new ResponseEntity<>(new Champion(null, null), HttpStatus.NOT_FOUND));
     }
 
     /**

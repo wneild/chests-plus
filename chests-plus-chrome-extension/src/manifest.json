@@ -3,7 +3,7 @@
 
   "name": "Chests+",
   "description":"League of Legends player tool that suggests the best champion for you to get your next Hextech Crafting chest",
-  "version": "1.1",
+  "version": "1.2",
 
   "icons": { "16": "icon16.png",
     "48": "icon48.png",
